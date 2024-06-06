@@ -1,0 +1,16 @@
+import os.path
+
+def get_contents_approach_1(fname):
+    if os.path.exists(fname):
+        with open(fname) as f:
+            return f.read()
+    else:
+        return None
+
+
+def get_contents_approach_2(fname):
+    try:
+        with open(fname) as f:
+            return f.read()
+    except FileNotFoundError:
+        return None
